@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			.fix-footer{width: 100%;position: fixed;bottom: 0;z-index: 100;background: #FFF;box-shadow:1px 1px 10px #000;min-width:320px;height:60px; left:0;}
+			.fix-footer ul{ max-width:640px; margin:0 auto;list-style: none;}
+			.fix-footer ul a{text-decoration: none;}
+			.fix-footer ul li{float: left;width: 27.5%; height:60px;background-color: #b9955a;}
+			.fix-footer ul li.new-sy,.fix-footer ul li.new-xm,.fix-footer ul li.new-yh{width: 15%;border-right: 1px solid #8d8d8d;background-color: #222c3c;box-sizing:border-box;}
+			.fix-footer ul li.new-tw{background-color: #784616;}
+			.fix-footer>ul>li.new-sy a,.fix-footer>ul>li.new-xm a,.fix-footer>ul>li.new-yh a{display: block;float: left;width: 100%;line-height:24px;text-align: center;font-size:14px;color:#fff; padding-top:6px;}
+			.fix-footer>ul>li.phone a,.fix-footer>ul>li.new-tw a{display: block;float: left; width: 100%;line-height:24px;text-align: center;font-size:14px; color:#fff; padding-top:4px;}
+			.fix-footer ul li.new-sy a img,.fix-footer ul li.new-xm a img,.fix-footer ul li.new-yh a img{ width:42%; display:block; margin:0 auto; max-width:29px; min-width:26px;}
+			.fix-footer ul li.new-xm a img{max-width:19px; min-width:22px;}
+			.fix-footer ul li.phone a img,.fix-footer ul li.new-tw a img{ width:27%; display:block; margin:0 auto; max-width:32px; min-width:27px;}
+			.fix-footer ul li.phone a img{max-width:25px; min-width:23px; padding-top: 4px;}
+			.fix-footer ul li.new-tw a img{max-width:32px; min-width:33px;}
+			.phone_return_visit{width: 100%;height: 100px;background:#f5f5f5 ;position: absolute;bottom: 60px;box-shadow:1px 1px 3px #000;display: none;z-index: 999;}
+			.phone_return_visit .close_phone_return_visit{width: 24px;height: 24px;position: absolute;top: 3px;right: 3px;}
+			.phone_return_visit input{width: 50%;height: 30px;border-radius: 20px;border: 1px solid #999;font-size:14px;color: #999;line-height: 30px;text-indent: 8px;margin: 35px 6% 35px 6%;}
+			.phone_return_visit a{width: 30%;display: inline-block;height: 32px;text-decoration: none;color: #fff;background-color:#b9955a;line-height: 32px;border-radius: 5px;text-decoration: none;text-align: center;}
+			input{outline: none;-webkit-appearance: none;border-radius: 0;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="fix-footer" style="display: block;">
+			<ul>
+				<li class="new-sy"><a href="javascript:void(0)" target="_blank" onclick="openZoosUrl('chatwin','&e=jiage');return false;"><img src="img/zhuye.png" alt="">首页</a></li>
+				<li class="new-xm"><a href="/zt/huodongzc/" class="per_activity"><img src="img/huodong.png" alt="">活动</a></li>
+				<li class="new-yh"><a href="/case/"><img src="img/anli.png" alt="">案例</a></li>
+				<li class="phone foot_btn"><a href="javascript:void(0)"><img src="img/phone.png" alt="">免费回电</a></li>
+				<li class="new-tw"><a href="javascript:void(0)" target="_blank" onclick="openZoosUrl('chatwin','&e=zaixianzixun');return false;"><img src="img/xiaoxi.png" alt="">在线咨询</a></li>
+			</ul>
+		</div> 
+		<div class="phone_return_visit">
+			<input type="tel" name="callbF_text" id="callbF_text" placeholder="请输入您的电话号码" onclick="this.value='\'" onblur="if(value=''){value='请输入您的电话号码'}"/>
+			<a  id='callbF_sub' href="javascript:void(0)">免费回电</a>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$('.foot_btn a').click(function(){$('.phone_return_visit').slideToggle(600);})
+			})
+		</script>
+	</body>
+</html>
